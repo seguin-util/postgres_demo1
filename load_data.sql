@@ -6,6 +6,8 @@ begin;
 -- DROP TABLE removes tables from the database
 drop table if exists factbook;
 
+-- its good practice to import all data as text initially as we just want to get the data in first without error then use the postgres tools to update
+
 create table factbook(
   year int,
   date date,
@@ -16,7 +18,7 @@ create table factbook(
 );
 
 --  copy to table name from factbook.csv with delimter E <E tells postgres that >
--- there may be an escape character in the data followed by '\t'...the null value specifies
+-- there may be an escape character in the data followed by '\t'<tab delimter>...the null value specifies
 -- there might be a null value if so add it as an empty value ''
 \copy factbook from 'factbook.csv' with delimiter E'\t' null ''
 
@@ -32,6 +34,9 @@ alter table factbook
 
   alter dollars
   type bigint
+
+  -- The PostgreSQL substring function is used to extract a string containing a specific number of characters from a particular position of a given string.
+
   using substring(replace(dollars, ',', '') from 2)::numeric;
 
 -- finally commit the transaction to the table
