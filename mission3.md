@@ -15,7 +15,7 @@
 - run `psql -U postgres`
 - from postgres run `\dt` to show what tables you already have
 - next work through the factbook.sql file after review the comments
-- run `psql -U postgres < factbook.psql`
+- run `psql -U postgres < load_data.sql`
 - now run `\dt`
 - you should see your new database factbook
 - see that the records where entered and run `select * from factbook limit 100;`
