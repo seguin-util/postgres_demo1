@@ -4,7 +4,7 @@
 ### Steps
 - Install postgres from postgresapp.com
 - Test at command line with `psql --help`
-- If working then enter `psql -U postgres` this will take you to the default user postgres
+- If working then enter `sudo psql -U postgres -d postgres -h localhost` this will take you to the default user postgres
 - to exit you can run `control d`
 - to see where postgres is installed run `which postgres` it should be located in
 - /Applications/Postgres.app/Contents/Versions/10/bin/psql
@@ -12,7 +12,7 @@
 - show all the psql commands you can run
 - to verify postgres is in your path run `echo "$PATH"`` and you will see it listed
 - now check to see what databases you have in postgres
-- run `psql -U postgres`
+- run `psql -U postgres -d postgres -h localhost`
 - from postgres run `\dt` to show what tables you already have
 - next work through the factbook.sql file after review the comments
 - run `psql -U postgres < load_data.sql`
